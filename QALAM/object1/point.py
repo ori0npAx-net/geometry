@@ -13,11 +13,17 @@ class Point:
     def display(self):
         print(self.x,self.y)
         
+    def __str__(self):
+        return f"({self.x},{self.y})"
+        
     def __add__(self,other):
         return Point(self.x+other.x,self.y+other.y)
           
     def __sub__(self,other):
         return Point(self.x-other.x,self.y-other.y)
+    
+    def distance(self,other):
+        return((self.x - other.x) **2 + (self.y - other.y) **2 )**0.5
     
     @classmethod
     def copy(cls,self,other_point):
